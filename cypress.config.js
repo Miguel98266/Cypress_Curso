@@ -7,7 +7,7 @@ module.exports = defineConfig({
       // implement node event listeners here
       
     },
-    specPattern:"cypress/e2e/automation-store/*.{js,jsx,ts,tsx,feature}"  
+    specPattern:"cypress/e2e/**/*.{js,jsx,ts,tsx,feature}"  
   },
   
 });
