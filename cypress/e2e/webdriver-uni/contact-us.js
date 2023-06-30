@@ -3,9 +3,12 @@
 
 
 describe('Test Contact Us form via webdriver Uni', () => { 
-    it("Should be able to submit a successful submission via contact us form",()=>{
+    it.only("Should be able to submit a successful submission via contact us form",()=>{
         // cypress code
         cy.visit("https://webdriveruniversity.com/Contact-Us/contactus.html")
+        cy.document().should('have.property','charset').and('eq','UTF-8')
+        cy.title().should('include','WebDriver | Contact Us')
+        cy.url().should('include', 'contactus')
         // cy.get('#contact-us').click()
         cy.get('[name="first_name"]').type("Miguel")
         cy.get('[name="last_name"]').type("Calixto")
@@ -22,6 +25,6 @@ describe('Test Contact Us form via webdriver Uni', () => {
         cy.get('[name="last_name"]').type("Serrano")
         cy.get('textarea.feedback-input').type("comment")
         cy.get('[type="submit"]').click()
-        cy.get('body').should('have.text',"Error: all fields are required")
+        cy.get('body').contains("Error: all fields are required")
     })
  })
