@@ -1,7 +1,7 @@
 ## Iniciar Cypress
 `./node_modules/.bin/cypress open`
 
-### Corre todos los test suite en modo headless sin abrir el navegador y graba video de la ejecuccionc
+### Corre todos los test suite en modo headless sin abrir el navegador y graba video de la ejecuccion
 `./node_modules/.bin/cypress run`
 
 ### Corre los test suite usando el browser Electron pero esta vez si muestra la pantalla
