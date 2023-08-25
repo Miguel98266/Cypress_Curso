@@ -14,4 +14,4 @@
 `./node_modules/.bin/cypress run cypress\e2e\webdriver-uni\contact-us.js`
 
 ### Corre todos los test case dentro de la carpeta
-`./node_modules/.bin/cypress run cypress\e2e\webdriver-uni\*`
+`./node_modules/.bin/cypress run --spec cypress/e2e/webdriver-uni/*`
