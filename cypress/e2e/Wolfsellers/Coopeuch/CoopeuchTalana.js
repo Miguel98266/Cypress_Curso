@@ -1,6 +1,6 @@
 // reference types="Cypress"
 
-let url = "https://pre.coopeuch.cl/talana/simulador";
+let url = "https://www.coopeuch.cl/personas/talana";
 // "https://qa.coopeuch.cl/personas/pruebas-qa";
 //'https://www.coopeuch.cl/talana/simulador'
 // 'https://www.coopeuch.cl/personas/talana/simulador'
@@ -25,7 +25,7 @@ describe("Formulario talana", () => {
     cy.clearCookies()
     cy.viewport(1440, 741);
     cy.wait(8000);
-    cy.get("#amount").type(" ")
+    cy.get("#amount").type(" ",{force:true})
     cy.get(".form_talana").click();
     // cy.get(".g-recaptcha").click();
     cy.get(".g-recaptcha").should('have.attr','disabled')
@@ -39,7 +39,7 @@ describe("Formulario talana", () => {
     cy.viewport(1440, 741);
     cy.clearCookies()
     cy.wait(8000);
-    cy.get("#talana-rut").type(' ')
+    cy.get("#talana-rut").type(' ',{force:true})
     cy.get(".form_talana").click();
     cy.get(".g-recaptcha").should('have.attr','disabled')
     // cy.get(".g-recaptcha").click({ force: true });
@@ -53,7 +53,7 @@ describe("Formulario talana", () => {
     cy.viewport(1440, 741);
     cy.clearCookies()
     cy.wait(8000);
-    cy.get("#phone").type(' ')
+    cy.get("#phone").type(' ',{force:true})
     cy.get(".form_talana").click();
     cy.get(".g-recaptcha").should('have.attr','disabled')
     // cy.get(".g-recaptcha").click({ force: true });
@@ -147,9 +147,9 @@ describe("Formulario talana", () => {
     cy.viewport(1440, 741);
     cy.clearCookies()
     cy.wait(8000);
-    cy.get("#amount").type("100000");
-    cy.get("#talana-rut").type("82.398.289-3239");
-    cy.get("#phone").type("123456789");
+    cy.get("#amount").type("100000",{force:true});
+    cy.get("#talana-rut").type("82.398.289-3239",{force:true});
+    cy.get("#phone").type("123456789",{force:true});
     cy.get(".form_talana").click();
     // cy.get(".g-recaptcha").click();
     cy.get(".g-recaptcha").should('have.attr','disabled')
@@ -198,7 +198,7 @@ describe("Formulario talana", () => {
     cy.get("#talana-rut").type("17762523-k", { force: true });
     cy.get("#phone").type("123456789", { force: true });
     cy.get(".form_talana").click({ force: true });
-    cy.get("#amount").clear().type('10')
+    cy.get("#amount").clear({force:true}).type('10',{force:true})
     cy.get(".form_talana").click();
     cy.wait(3000);
     // cy.get(".g-recaptcha").click();
@@ -217,7 +217,7 @@ describe("Formulario talana", () => {
     cy.get("#talana-rut").type("17762523-k", { force: true });
     cy.get("#phone").type("123456789", { force: true });
     cy.get(".form_talana").click({ force: true });
-    cy.get("#talana-rut").clear().type('17762523')
+    cy.get("#talana-rut").clear({force:true}).type('17762523',{force:true})
     cy.get(".form_talana").click();
     cy.wait(3000);
     // cy.get(".g-recaptcha").click({ force: true });
@@ -236,7 +236,7 @@ describe("Formulario talana", () => {
     cy.get("#talana-rut").type("17762523-k", { force: true });
     cy.get("#phone").type("123456789", { force: true });
     cy.get(".form_talana").click({ force: true });
-    cy.get("#phone").clear().type('1234')
+    cy.get("#phone").clear({force:true}).type('1234',{force:true})
     cy.get(".form_talana").click();
     cy.wait(3000);
     cy.get(".g-recaptcha").should('have.attr','disabled')

@@ -4,7 +4,7 @@ describe("Formulario Simulador Home", () => {
 
     it("Enviar formulario Home exitosamente", () => {
       // cypress code
-      cy.visit(url);
+      cy.visit(url_home);
       cy.clearCookies()
       cy.viewport(1440, 741);
       cy.wait(5000);
@@ -12,6 +12,7 @@ describe("Formulario Simulador Home", () => {
       cy.get('#amount').type('200000')
       cy.get("#simulator-rut").type('14191368-9')
       cy.get("#simulator-phone").type('123456783')
+      
       cy.get(".button-simulate").click()
       cy.get(".button-coopeuch-2").first().click()
       cy.wait(2000)
@@ -22,7 +23,7 @@ describe("Formulario Simulador Home", () => {
       cy.get('.title').contains("Hemos")
       cy.screenshot({capture:'runner'})
     });
-    it("Enviar formulario Url directa exitosamente", () => {
+    it.only("Enviar formulario Url directa exitosamente", () => {
         // cypress code
         cy.visit(url_directa);
         cy.clearCookies()
@@ -39,6 +40,7 @@ describe("Formulario Simulador Home", () => {
         cy.get('#submitForm').click()
         cy.wait(3000)
         cy.get('.breadcrumb-productos').contains("Productos").scrollIntoView()
-        cy.screenshot({capture:'runner'})
+        cy.screenshot({capture:'runner'},"Url directa "+Date.now())
       });
   });
+  
